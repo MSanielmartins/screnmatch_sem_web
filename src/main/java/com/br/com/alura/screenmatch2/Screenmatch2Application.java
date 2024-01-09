@@ -1,8 +1,5 @@
 package com.br.com.alura.screenmatch2;
-
-import com.br.com.alura.screenmatch2.model.DadosSeries;
-import com.br.com.alura.screenmatch2.service.ConsumoApi;
-import com.br.com.alura.screenmatch2.service.ConverteDados;
+import com.br.com.alura.screenmatch2.principal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,12 +13,10 @@ public class Screenmatch2Application implements CommandLineRunner {
 	}
 	@Override
 	public void run(String... args) throws Exception {
-		ConsumoApi consumoApi = new ConsumoApi();
-		var json = consumoApi.obterDados("http://www.omdbapi.com/?t=gilmore+girls&apikey=d403f677");
-		System.out.println(json);
-		ConverteDados conversor = new ConverteDados();
-		DadosSeries dados = conversor.obterDados(json, DadosSeries.class);
-		System.out.println(dados);
+		Principal principal = new Principal();
+		principal.exibirMenu();
+
+
 
 	}
 }
