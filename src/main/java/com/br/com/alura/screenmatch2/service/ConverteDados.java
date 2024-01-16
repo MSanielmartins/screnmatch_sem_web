@@ -4,7 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ConverteDados implements  IConverteDados {
-    private ObjectMapper mapper = new ObjectMapper();       //OBJETO DDO JECKSON
+    private ObjectMapper mapper = new ObjectMapper();       //OBJETO DO JECKSON
+
+    // utilizando o genericos
 
         @Override
         public <T> T obterDados(String json, Class<T> classe) {
